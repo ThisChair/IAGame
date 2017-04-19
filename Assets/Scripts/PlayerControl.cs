@@ -13,7 +13,7 @@ public class PlayerControl : MonoBehaviour {
     {
         rb = GetComponent<Rigidbody>();
         // Make it so that the player won't budge by the sides when a force is applied.
-        rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
+        //rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
     }
 
     void FixedUpdate ()
