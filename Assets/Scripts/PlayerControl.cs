@@ -3,11 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerControl : MonoBehaviour {
+    /*
+     * This class implements basic movement for the player object.
+     * Information on the vertical axis is used to apply positive (up/w) or negative (down/s) force.
+     * Information on the horizontal axis is used to apply positive (right/d) or negative (left/a) torque.
+     * Note: This keys can be modified from the input manager.
+     */
 
     public float force; // Magnitude of the thrust.
     public float torque; // Magnitude of the rotation.
 
-    private Rigidbody rb;
+    private Rigidbody rb; // Rigidbody of the player.
 
     void Start ()
     {
