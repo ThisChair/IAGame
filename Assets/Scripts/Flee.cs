@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Seek : MonoBehaviour {
+public class Flee : MonoBehaviour {
     /*
      * This class implements "seek" behavior.
-     * "Seek" uses a target object as an input, and takes its position relative to this object
-     * as a direction to apply a force
+     * "Seek" uses a target object as an input, and takes its position to 
      */ 
 
 
@@ -24,7 +23,7 @@ public class Seek : MonoBehaviour {
     {
         // Get the direction to the target object.
         Transform seeker = GetComponent<Transform>();
-        Vector3 direction = (target.transform.position - seeker.position).normalized;
+        Vector3 direction = (seeker.position -  target.transform.position).normalized;
         rb.AddForce(direction * maxSpeed);
     }
 
