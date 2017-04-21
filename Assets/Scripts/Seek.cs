@@ -25,7 +25,12 @@ public class Seek : MonoBehaviour {
         // Get the direction to the target object.
         Transform seeker = GetComponent<Transform>();
         Vector3 direction = (target.transform.position - seeker.position).normalized;
-        rb.AddForce(direction * maxSpeed);
+        if (!direction.Equals(Vector3.zero)) {
+            // Make the object look in the direction of movement.
+            transform.LookAt (new Vector3(direction.x, seeker.position.y, direction.z), Vector3.up);
+            // Push toward the target.
+            rb.AddForce (direction * maxSpeed);
+        }
     }
 
 
