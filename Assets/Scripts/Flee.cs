@@ -25,7 +25,7 @@ public class Flee : MonoBehaviour {
         // Get the direction away from the target object.
         Transform seeker = GetComponent<Transform>();
         Vector3 direction = (seeker.position -  target.transform.position).normalized;
-        if (!direction.Equals (Vector3.zero)) {
+        if (direction.magnitude != 0) {
             // Push away from the target.
             rb.AddForce (direction * maxSpeed);
         }

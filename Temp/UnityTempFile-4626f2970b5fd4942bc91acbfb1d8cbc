@@ -85,8 +85,9 @@
 -define:UNITY_EDITOR_WIN
 -define:ENABLE_NATIVE_ARRAY_CHECKS
 -define:UNITY_TEAM_LICENSE
+Assets/Scripts/Arrive.cs
 Assets/Scripts/Flee.cs
-Assets/Scripts/NewBehaviourScript.cs
+Assets/Scripts/LookWhereYoureGoing.cs
 Assets/Scripts/PlayerControl.cs
 Assets/Scripts/Seek.cs
 Assets/Scripts/Wander.cs
