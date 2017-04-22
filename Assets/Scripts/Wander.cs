@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Wander : MonoBehaviour {
     /*
-     * This class implements "wander" behavior.
+     * This class implements "wander" behaviour.
      * "Wander" makes the objects always move towards its current orientation, while rotating randomly.
      * Not all who wander are lost... But sure I am.
      */

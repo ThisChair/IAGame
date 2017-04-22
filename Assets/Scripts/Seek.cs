@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Seek : MonoBehaviour {
     /*
-     * This class implements "seek" behavior.
+     * This class implements "seek" behaviour.
      * "Seek" uses a target object as an input, and takes its position relative to this object
      * as a direction to apply a force
      */ 
@@ -26,8 +26,6 @@ public class Seek : MonoBehaviour {
         Transform seeker = GetComponent<Transform>();
         Vector3 direction = (target.transform.position - seeker.position).normalized;
         if (!direction.Equals(Vector3.zero)) {
-            // Make the object look in the direction of movement.
-            transform.LookAt (new Vector3(direction.x, seeker.position.y, direction.z), Vector3.up);
             // Push toward the target.
             rb.AddForce (direction * maxSpeed);
         }
