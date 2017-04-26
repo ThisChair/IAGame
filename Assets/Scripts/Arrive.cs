@@ -12,9 +12,11 @@ public class Arrive : MonoBehaviour {
 
 
     public GameObject target; // Target object to seek.
+    public float maxAcceleration; // Max speed of the movement towards the target.
     public float maxSpeed; // Max speed of the movement towards the target.
     public float targetRadius;
     public float slowRadius;
+    public float timeToTarget = 0.1f;
 
     private Rigidbody rb; // Rigidbody of the seeker.
 
@@ -38,8 +40,17 @@ public class Arrive : MonoBehaviour {
                 targetSpeed = maxSpeed * distance / slowRadius;
             }
             Vector3 targetVelocity = direction.normalized * targetSpeed;
+
+            Rigidbody targetrb = target.GetComponent<Rigidbody> ();
+
+            Vector3 acceleration = (targetVelocity - targetrb.velocity)/timeToTarget;
+
+            if (acceleration.magnitude > maxAcceleration) {
+                acceleration = acceleration.normalized * maxAcceleration;
+            }
+
             // Push toward the target.
-            rb.AddForce (targetVelocity);
+            rb.AddForce (acceleration);
         }
     }
 }
